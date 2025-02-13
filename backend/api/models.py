@@ -55,6 +55,7 @@ class Payment(models.Model):
         ('failed','Failed'),
         ('processing','Processing'),
     ]
+    
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     payment_method = models.CharField(max_length=20, choices=PAYMENT_METHOD_CHOICES)
     status = models.CharField(max_length=20, choices=PAYMENT_STATUS_CHOICES, default='processing')
